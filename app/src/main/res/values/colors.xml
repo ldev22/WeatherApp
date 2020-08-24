@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorForestSunny">#47AB2F</color>
+    <color name="colorForestCloudy">#54717A</color>
+    <color name="colorForestRainy">#57575D</color>
+</resources>
