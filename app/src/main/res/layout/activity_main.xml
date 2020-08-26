@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,7 +11,7 @@
         android:background="@color/colorForestSunny">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/mainBackground">
         <RelativeLayout
             android:layout_width="match_parent"
@@ -61,7 +60,7 @@
                         android:text="19\u00B0"
                         android:textSize="28sp"
                         android:textColor="#ffffff"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -69,7 +68,7 @@
                         android:text="min"
                         android:textSize="22sp"
                         android:textColor="#ffffff"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -77,7 +76,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:textAlignment="center"
-                    android:layout_marginLeft="100dp">
+                    android:layout_marginStart="100dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -85,7 +84,7 @@
                         android:text="25\u00B0"
                         android:textSize="28sp"
                         android:textColor="#ffffff"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:textAlignment="center"
                         />
                     <TextView
@@ -94,7 +93,7 @@
                         android:text="Current"
                         android:textSize="22sp"
                         android:textColor="#ffffff"
-                        android:paddingLeft="5dp"
+                        android:paddingStart="5dp"
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -102,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:textAlignment="center"
-                    android:layout_marginLeft="80dp">
+                    android:layout_marginStart="80dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -110,7 +109,7 @@
                         android:text="27\u00B0"
                         android:textSize="28sp"
                         android:textColor="#ffffff"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:textAlignment="center"
                         />
                     <TextView
@@ -119,7 +118,7 @@
                         android:text="max"
                         android:textSize="22sp"
                         android:textColor="#ffffff"
-                        android:paddingLeft="5dp"
+                        android:paddingStart="5dp"
                         />
                 </LinearLayout>
             </LinearLayout>
@@ -140,7 +139,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/dayOWeek1"
                         android:textSize="25sp"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:text="Wednesday"
                         android:textColor="#fff"
                         android:textAlignment="center"
@@ -150,7 +149,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/dayOWeek2"
                         android:textSize="25sp"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:text="Thursday"
                         android:textColor="#fff"
                         android:textAlignment="center"
@@ -160,7 +159,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/dayOWeek3"
                         android:textSize="25sp"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:text="Friday"
                         android:textColor="#fff"
                         android:textAlignment="center"
@@ -170,7 +169,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/dayOWeek4"
                         android:textSize="25sp"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:text="Saturday"
                         android:textColor="#fff"
                         android:textAlignment="center"
@@ -180,7 +179,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/dayOWeek5"
                         android:textSize="25sp"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:text="Sunday"
                         android:textColor="#fff"
                         android:textAlignment="center"
@@ -191,63 +190,63 @@
                     android:orientation="vertical">
                     <ImageView
                         android:id="@+id/iconWeather1"
+                        android:contentDescription="Weather Icon 1"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
-                        android:background="@drawable/w01n"
+                        android:background="@drawable/clear"
                         android:minWidth="1dp"
                         android:minHeight="1dp"
-                        android:paddingLeft="10dp"
-                        android:src="@drawable/w01d"
+                        android:paddingStart="10dp"
                         android:textAlignment="center"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
                         android:paddingTop="20dp"/>
                     <ImageView
                         android:id="@+id/iconWeather2"
+                        android:contentDescription="Weather Icon 2"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
-                        android:background="@drawable/w01d"
+                        android:background="@drawable/clear"
                         android:minWidth="1dp"
                         android:minHeight="1dp"
-                        android:paddingLeft="10dp"
-                        android:src="@drawable/w01d"
+                        android:paddingStart="10dp"
                         android:textAlignment="center"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
                         android:paddingTop="20dp"/>
                     <ImageView
                         android:id="@+id/iconWeather3"
+                        android:contentDescription="Weather Icon 3"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
-                        android:background="@drawable/w11n"
+                        android:background="@drawable/rain"
                         android:minWidth="1dp"
                         android:minHeight="1dp"
-                        android:paddingLeft="10dp"
-                        android:src="@drawable/w01d"
+                        android:paddingStart="10dp"
                         android:textAlignment="center"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
                         android:paddingTop="20dp"/>
                     <ImageView
                         android:id="@+id/iconWeather4"
+                        android:contentDescription="Weather Icon 4"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
-                        android:background="@drawable/w01n"
+                        android:background="@drawable/partlysunny"
                         android:minWidth="1dp"
                         android:minHeight="1dp"
-                        android:paddingLeft="10dp"
-                        android:src="@drawable/w01d"
+                        android:paddingStart="10dp"
                         android:textAlignment="center"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
                         android:paddingTop="20dp"/>
                     <ImageView
                         android:id="@+id/iconWeather5"
+                        android:contentDescription="Weather Icon 5"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
-                        android:background="@drawable/w01n"
+                        android:background="@drawable/partlysunny"
                         android:minWidth="1dp"
                         android:minHeight="1dp"
-                        android:paddingLeft="10dp"
-                        android:src="@drawable/w01d"
+                        android:paddingStart="10dp"
                         android:textAlignment="center"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
                         android:paddingTop="20dp"/>
                 </LinearLayout>
                 <LinearLayout android:layout_width="150dp"
@@ -258,55 +257,55 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/forecastTemp1"
                     android:textSize="25sp"
-                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"
                     android:text="22\u00B0"
                     android:textColor="#ffffff"
                     android:textAlignment="textStart"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/forecastTemp2"
                         android:textSize="25sp"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:text="18\u00B0"
                         android:textColor="#ffffff"
                         android:textAlignment="textStart"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/forecastTemp3"
                         android:textSize="25sp"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:text="22\u00B0"
                         android:textColor="#ffffff"
                         android:textAlignment="textStart"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/forecastTemp4"
                         android:textSize="25sp"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:text="27\u00B0"
                         android:textColor="#ffffff"
                         android:textAlignment="textStart"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/forecastTemp5"
                         android:textSize="25sp"
-                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
                         android:text="24\u00B0"
                         android:textColor="#ffffff"
                         android:textAlignment="textStart"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"/>
                 </LinearLayout>
             </LinearLayout>
