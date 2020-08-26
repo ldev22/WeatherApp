@@ -33,21 +33,13 @@ import com.wungatech.weatherapp.Helpers.Helper;
 import com.wungatech.weatherapp.Models.ForecastResponse;
 import com.wungatech.weatherapp.Models.WeatherResponse;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.DayOfWeek;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     LocationManager locationManager;
@@ -146,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                     });
+                    //future version will have a refactored version
                     Retrofit retrofit2 = new Retrofit.Builder()
                             .baseUrl(BaseUrl)
                             .addConverterFactory(GsonConverterFactory.create())
@@ -161,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
                                 Calendar calendar = Calendar.getInstance();
                                 int day = calendar.get(Calendar.DAY_OF_WEEK);
                                 //the reason we are doing this is to fit with the design of the app
+                                //recycler view doesn't align elements neatly
                                 day1.setText(helper.convertStringtoDay(day + 1));
                                 day2.setText(helper.convertStringtoDay(day + 2));
                                 day3.setText(helper.convertStringtoDay(day + 3));
@@ -201,6 +195,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             };
+            //check if your device has permissions to access location information
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             }else{
@@ -210,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
             try{
                 favourites = this.openOrCreateDatabase("Favourites", MODE_PRIVATE, null);
                 Cursor c = favourites.rawQuery("SELECT * FROM favourites LIMIT 1",null);
+                //check if offline db content exists
                 if(c != null){
                     int lat = c.getColumnIndex("lat");
                     int lon = c.getColumnIndex("lon");
@@ -285,6 +281,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("lat", lat);
                 String gsonForecast = gson.toJson(forecastResponse);
                 String gsonWeather = gson.toJson(weatherResponse);
+                //save the lat,lon, json as a table elements
                 try{
                     favourites.execSQL("INSERT INTO favourites(lat,lon,jsonData, updated) " +
                             "VALUES('"+lat+"', '"+lon+"', '"+ gsonForecast +"', 'NOW()')");
@@ -294,10 +291,10 @@ public class MainActivity extends AppCompatActivity {
                 }catch(SQLException e){
                     Toast.makeText(this, "Offline storage failed", Toast.LENGTH_LONG).show();
                 }
-                //save the url as a database item
+
                 return true;
             case R.id.nav_view_favourites:
-                //Open maps to show all favourites
+                //Open list of all favourite places
                 Intent fav = new Intent(this, FavouritesActivity.class);
                 startActivity(fav);
                 return true;
@@ -305,7 +302,7 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
+    //check if the device has network connectivity...will refactor as helper method in upgraded version
     private boolean isNetworkConnected() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();

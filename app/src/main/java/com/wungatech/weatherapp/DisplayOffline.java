@@ -14,16 +14,13 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.wungatech.weatherapp.Helpers.Helper;
 import com.wungatech.weatherapp.Models.ForecastResponse;
 import com.wungatech.weatherapp.Models.WeatherResponse;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public class DisplayOffline extends AppCompatActivity {
     WeatherResponse weatherResponse;
@@ -65,7 +62,6 @@ public class DisplayOffline extends AppCompatActivity {
             case R.id.home:
                 Intent home = new Intent(this, MainActivity.class);
                 startActivity(home);
-
                 return true;
             case R.id.nav_view_favourites:
                 //Open maps to show all favourites
@@ -80,7 +76,7 @@ public class DisplayOffline extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_offline);
-        Log.i("Enter Offline Activity", "We are in the offline activity");
+        //Log.i("Enter Offline Activity", "We are in the offline activity");
         Intent intent = getIntent();
         String lat = intent.getStringExtra("lat");
         String lon = intent.getStringExtra("lon");

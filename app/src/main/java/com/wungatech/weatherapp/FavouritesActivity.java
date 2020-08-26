@@ -1,16 +1,12 @@
 package com.wungatech.weatherapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.location.Address;
-import android.location.Geocoder;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -21,10 +17,8 @@ import com.wungatech.weatherapp.Adapter.PlaceAdapter;
 import com.wungatech.weatherapp.Helpers.Helper;
 import com.wungatech.weatherapp.Models.Place;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class FavouritesActivity extends AppCompatActivity implements PlaceAdapter.OnPlaceListener {
     private RecyclerView rv;
@@ -59,7 +53,7 @@ public class FavouritesActivity extends AppCompatActivity implements PlaceAdapte
                         Log.i("Error", e.getLocalizedMessage());
                     }
                 }while(c.moveToNext());
-                Log.i("Places:", places.toString());
+                //Log.i("Places:", places.toString());
                 PlaceAdapter mAdapter = new PlaceAdapter(this, places, this);
                 mAdapter.notifyDataSetChanged();
                 rv = findViewById(R.id.favouriteList);
@@ -100,7 +94,7 @@ public class FavouritesActivity extends AppCompatActivity implements PlaceAdapte
                 startActivity(home);
                 return true;
             case R.id.nav_view_favourites:
-                //Open maps to show all favourites
+                //Open maps to show list of favourites
                 Intent fav = new Intent(this, FavouritesActivity.class);
                 startActivity(fav);
                 return true;

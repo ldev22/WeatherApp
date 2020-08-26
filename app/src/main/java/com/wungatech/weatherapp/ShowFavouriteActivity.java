@@ -23,23 +23,18 @@ public class ShowFavouriteActivity extends FragmentActivity implements OnMapRead
     private Double lon;
     private Double lat;
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_nav, menu);
         return true;
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
         switch (item.getItemId()) {
             case R.id.nav_add_favourites:
                 item.setTitle("Home");
                 Intent home = new Intent(this, MainActivity.class);
                 startActivity(home);
-                Toast.makeText(this, "Successfully added as favourite", Toast.LENGTH_LONG).show();
-                //save the url as a database item
                 return true;
             case R.id.nav_view_favourites:
-                //Open maps to show all favourites
                 Intent fav = new Intent(this, FavouritesActivity.class);
                 startActivity(fav);
                 return true;
@@ -51,7 +46,6 @@ public class ShowFavouriteActivity extends FragmentActivity implements OnMapRead
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_favourite);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         try{
             SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.map);
